@@ -2,6 +2,9 @@
 
 > 面向独立游戏开发的 AI Skill 导航 —— GDD 起草 / Godot 场景与架构 / Steam 商店页 / CI 构建。
 
+🌐 **在线导航**：https://yxwblql123.github.io/hashrise-skills-hub/
+📦 **仓库**：https://github.com/yxwblql123/hashrise-skills-hub
+
 **第一方技能来自《算力崛起 Hashrise》的真实工程实践（已验证），第三方技能逐条核实文件、commit 与内容哈希。**
 
 ---
@@ -129,7 +132,7 @@ git checkout HEAD -- data/catalog.json skills/
 
 ```bash
 # 方式一：直接安装技能包
-npx skills add hashrise-studio/hashrise-skills-hub --skill hashrise-find-game-dev-skills -a codex
+npx skills add yxwblql123/hashrise-skills-hub --skill hashrise-find-game-dev-skills -a codex
 
 # 方式二：WorkBuddy —— 导入 ZIP
 # 1) 下载 dist/downloads/hashrise-find-game-dev-skills.zip

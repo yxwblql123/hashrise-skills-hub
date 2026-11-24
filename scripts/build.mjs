@@ -62,8 +62,8 @@ await writeFile(`${SKILL}/references/release.json`, JSON.stringify({
 await writeFile(`${SKILL}/references/website.json`, JSON.stringify({
   name: 'Hashrise 游戏开发 Skill 导航',
   title: '独立游戏开发 AI 技能索引',
-  repo: 'hashrise-studio/hashrise-skills-hub',
-  homepage: 'https://github.com/hashrise-studio/hashrise-skills-hub',
+  repo: 'yxwblql123/hashrise-skills-hub',
+  homepage: 'https://github.com/yxwblql123/hashrise-skills-hub',
   stats: catalog.stats,
   facets: catalog.facets,
   coverage: catalog.coverage
@@ -128,15 +128,16 @@ await writeFile('dist/preview.html', portable);
 
 const skillHTML = portable
   .replaceAll('href="./downloads/hashrise-find-game-dev-skills.zip" download',
-    'href="https://github.com/hashrise-studio/hashrise-skills-hub/tree/main/skills/hashrise-find-game-dev-skills" target="_blank" rel="noopener noreferrer"')
+    'href="https://github.com/yxwblql123/hashrise-skills-hub/tree/main/skills/hashrise-find-game-dev-skills" target="_blank" rel="noopener noreferrer"')
   .replaceAll('href="./downloads/hashrise-skills-hub-source.zip" download',
-    'href="https://github.com/hashrise-studio/hashrise-skills-hub" target="_blank" rel="noopener noreferrer"');
+    'href="https://github.com/yxwblql123/hashrise-skills-hub" target="_blank" rel="noopener noreferrer"');
 
 await writeFile(`${SKILL}/assets/hashrise-skills.html`, skillHTML);
 
 /* ---------- 6. 打包 ---------- */
 
-execFileSync('python', ['-c', `
+const PY = process.platform === 'win32' ? 'python' : 'python3';
+execFileSync(PY, ['-c', `
 import pathlib, zipfile
 r = pathlib.Path('.')
 def add(zf, files, base):

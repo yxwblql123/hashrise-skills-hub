@@ -730,9 +730,9 @@ def build():
         if os.path.isfile(meta_path):
             meta = json.load(open(meta_path, encoding="utf-8"))
         fp.append({
-            "id": f"hashrise-studio--hashrise-skills-hub--{name}",
-            "repo": "hashrise-studio/hashrise-skills-hub",
-            "repo_url": "https://github.com/hashrise-studio/hashrise-skills-hub",
+            "id": f"yxwblql123--hashrise-skills-hub--{name}",
+            "repo": "yxwblql123/hashrise-skills-hub",
+            "repo_url": "https://github.com/yxwblql123/hashrise-skills-hub",
             "path": f"skills/{d}/SKILL.md",
             "name": name,
             "title": meta.get("title", fm.get("title", name)),
@@ -740,10 +740,10 @@ def build():
             "category": meta.get("category", "概念与策划"),
             "platforms": meta.get("platforms", ["Godot"]),
             "capability": meta.get("capability", "方法指导"),
-            "author": "hashrise-studio",
+            "author": "yxwblql123",
             "license": "MIT",
-            "license_url": f"https://github.com/hashrise-studio/hashrise-skills-hub/blob/{fp_commit}/LICENSE",
-            "source_url": f"https://github.com/hashrise-studio/hashrise-skills-hub/blob/{fp_commit}/skills/{d}/SKILL.md",
+            "license_url": f"https://github.com/yxwblql123/hashrise-skills-hub/blob/{fp_commit}/LICENSE",
+            "source_url": f"https://github.com/yxwblql123/hashrise-skills-hub/blob/{fp_commit}/skills/{d}/SKILL.md",
             "source_commit": fp_commit,
             "content_sha256": hashlib.sha256(raw_bytes).hexdigest(),
             "content_bytes": len(raw_bytes),
