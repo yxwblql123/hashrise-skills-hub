@@ -82,6 +82,10 @@ for (const entry of await readdir('src', { withFileTypes: true })) {
 }
 await cp(CATALOG, 'dist/data/catalog.json', { force: true });
 
+/* 自定义域名：GitHub Pages 靠发布产物根目录的 CNAME 文件持久化，
+   workflow 每次从 dist 上传 artifact，所以必须在构建时写进去。 */
+await writeFile('dist/CNAME', 'hashrise.devs.li\n');
+
 await writeFile('dist/llms.txt',
 `# Hashrise 游戏开发 Skill 导航
 
