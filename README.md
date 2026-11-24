@@ -2,8 +2,11 @@
 
 > 面向独立游戏开发的 AI Skill 导航 —— GDD 起草 / Godot 场景与架构 / Steam 商店页 / CI 构建。
 
+[![CI](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml) [![Pages](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/deploy-pages.yml/badge.svg)](https://yxwblql123.github.io/hashrise-skills-hub/) [![Skills](https://img.shields.io/badge/Skills-190-blueviolet?style=flat-square)](https://yxwblql123.github.io/hashrise-skills-hub/) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) [![Node](https://img.shields.io/badge/Node-%3E%3D22-brightgreen?style=flat-square)](package.json)
+
 🌐 **在线导航**：https://yxwblql123.github.io/hashrise-skills-hub/
 📦 **仓库**：https://github.com/yxwblql123/hashrise-skills-hub
+📥 **便携单文件页**（断网可用）：[下载 preview.html](https://yxwblql123.github.io/hashrise-skills-hub/preview.html)
 
 **第一方技能来自《算力崛起 Hashrise》的真实工程实践（已验证），第三方技能逐条核实文件、commit 与内容哈希。**
 
@@ -130,13 +133,50 @@ git checkout HEAD -- data/catalog.json skills/
 
 ## 安装导航技能
 
-```bash
-# 方式一：直接安装技能包
-npx skills add yxwblql123/hashrise-skills-hub --skill hashrise-find-game-dev-skills -a codex
+先想清楚你要哪一种：
 
-# 方式二：WorkBuddy —— 导入 ZIP
-# 1) 下载 dist/downloads/hashrise-find-game-dev-skills.zip
-# 2) 「专家·技能·连接器」→「技能」→「添加技能 → 上传技能」
+| 需求 | 做法 |
+|------|------|
+| 只是查技能、看导航 | **不用装**，直接开 [在线站](https://yxwblql123.github.io/hashrise-skills-hub/) |
+| 想离线带着走 | 下载 [preview.html](https://yxwblql123.github.io/hashrise-skills-hub/preview.html)，双击即开，目录全内联 |
+| 想在 AI 客户端里对话式检索 | 安装下面的 `hashrise-find-game-dev-skills` 技能包 |
+| 想用某个第三方技能本体 | 在导航页筛出条目 → 看详情里的「安装命令」，装到对应客户端 |
+
+### 装导航技能（三选一）
+
+**① WorkBuddy（推荐）**
+
+下载 [hashrise-find-game-dev-skills.zip](https://github.com/yxwblql123/hashrise-skills-hub/raw/main/releases/hashrise-find-game-dev-skills.zip) → 解压出含 `SKILL.md` 的文件夹 → 整个丢进 `C:\Users\<你>\.workbuddy\skills\hashrise-find-game-dev-skills\`，重启会话即可。
+
+也可以用界面：「专家 · 技能 · 连接器」→「技能」→「添加技能 → 上传技能」导入 ZIP。
+
+装好后直接在对话里说：
+
+```
+使用 $hashrise-find-game-dev-skills，帮我找适合 Godot 4.x 离线游戏的存档同步技能，
+列出用途、许可证、费用和安装方式。
+```
+
+**② Codex / Claude Code（skills CLI）**
+
+```bash
+npx skills add yxwblql123/hashrise-skills-hub --skill hashrise-find-game-dev-skills -a codex
+npx skills add yxwblql123/hashrise-skills-hub --skill hashrise-find-game-dev-skills -a claude
+```
+
+**③ 任意支持 SKILL.md 的客户端**
+
+下载 ZIP → 解压 → 把 `skills/hashrise-find-game-dev-skills/` 整个文件夹放到该客户端的技能目录。技能包是标准 SKILL.md 格式，无私有字段。
+
+> 目录随技能包一起分发，**检索默认离线可用**，不依赖在线站。在线站更新后重新下载技能包即可同步。
+
+### 关于第三方技能的安装命令
+
+目录里第三方条目的 `install_command` 多为 `-a codex` 形式；WorkBuddy 用不了这种命令，请按上面①的方式手动放入技能目录，或加 `--agent workbuddy` 让检索脚本生成对应指引：
+
+```bash
+cd skills/hashrise-find-game-dev-skills
+node scripts/search.mjs --query "Godot 场景架构" --agent workbuddy
 ```
 
 ## 检索

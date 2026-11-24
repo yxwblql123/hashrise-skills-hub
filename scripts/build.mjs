@@ -136,9 +136,13 @@ await writeFile(`${SKILL}/assets/hashrise-skills.html`, skillHTML);
 
 /* ---------- 6. 打包 ---------- */
 
+/* 可分发副本：dist 被 gitignore，下载链接走仓库 releases/ 目录，
+   因此每次构建把 ZIP 同步一份到这里，保证 raw 链接永久可用。 */
+await mkdir('releases', { recursive: true });
+
 const PY = process.platform === 'win32' ? 'python' : 'python3';
 execFileSync(PY, ['-c', `
-import pathlib, zipfile
+import pathlib, zipfile, shutil
 r = pathlib.Path('.')
 def add(zf, files, base):
     for f in files:
@@ -156,6 +160,9 @@ with zipfile.ZipFile('dist/downloads/hashrise-skills-hub-source.zip', 'w', zipfi
         if not p.exists():
             continue
         add(z, [p] if p.is_file() else sorted(p.rglob('*')), 'hashrise-skills-hub')
+
+for name in ['hashrise-find-game-dev-skills.zip', 'hashrise-skills-hub-source.zip']:
+    shutil.copy2(r/'dist/downloads'/name, r/'releases'/name)
 `], { stdio: 'inherit' });
 
 console.log(`构建完成：${catalog.skills.length} 条目录 · 站点 + 便携页 + 技能 ZIP + 源码 ZIP`);
