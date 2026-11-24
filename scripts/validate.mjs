@@ -77,11 +77,12 @@ if (d.stats) {
 
 // 分类与平台取值受控
 const ALLOWED_CATEGORY = ['概念与策划', '引擎与实现', '美术与音频', '商业化与发行',
-  '工程与交付', '质量与运营', '平台与后端'];
+  '工程与交付', '质量与运营', '平台与后端', '导航与工具'];
 const ALLOWED_PLATFORM = ['Godot', 'Unity', 'Unreal', 'Web', 'Blender', 'Steam', '通用'];
 const ALLOWED_CAPABILITY = ['方法指导', '代码生成', '自动化', '平台接入'];
 
 for (const s of d.skills) {
+  const tag = s.id;
   assert.ok(ALLOWED_CATEGORY.includes(s.category), `${tag}: 未知分类 ${s.category}`);
   assert.ok(ALLOWED_CAPABILITY.includes(s.capability), `${tag}: 未知能力形态 ${s.capability}`);
   for (const p of s.platforms) {

@@ -14,7 +14,8 @@ export const categoryAliases = {
   '商业化与发行': ['steam', '商店页', 'store', '发行', '发布', '上架', '营销', 'marketing', '定价', '价格', '标签', 'tag', '预告片', 'trailer', '愿望单', '社区', '版本', '试玩', 'demo', 'playtest', 'steamworks', 'steamdeck'],
   '工程与交付': ['ci', 'cd', '构建', 'build', '流水线', 'pipeline', '导出', 'export', '发版', 'release', '测试', 'test', 'qa', 'tdd', '性能', 'perf', '优化', '打包', '签名', '自动化'],
   '质量与运营': ['质量', '评审', 'review', '埋点', '遥测', '分析', '无障碍', 'accessibility', '平衡检查', 'jam', '本地化'],
-  '平台与后端': ['后端', 'backend', 'api', '云存档', 'cloud', '联机', '多人', 'multiplayer', '服务器', 'server', '导航', 'npc', '相机', '程序生成']
+  '平台与后端': ['后端', 'backend', 'api', '云存档', 'cloud', '联机', '多人', 'multiplayer', '服务器', 'server', '导航', 'npc', '相机', '程序生成'],
+  '导航与工具': ['导航', '索引', '目录', '技能发现', '找技能', '有哪些技能', 'navigation', 'catalog', 'discovery']
 };
 
 /** 引擎别名 → 目录中的引擎名 */

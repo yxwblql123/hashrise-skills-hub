@@ -131,7 +131,7 @@ git checkout HEAD -- data/catalog.json skills/
 
 ## 覆盖范围与已知限制
 
-- 目录是**精选快照**，来自 22 个上游仓库的 181 个第三方技能 + 8 个第一方技能，未覆盖全网。
+- 目录是**精选快照**，来自 22 个上游仓库的 181 个第三方技能 + 9 个第一方技能，未覆盖全网。
 - 第三方条目全部 `tested: false`；部分第三方技能依赖付费 API（如 Steamworks MCP 需要配置 Steamworks 账号），装前先看详情页。
 - 引擎维度以 Godot 与 Steam 为主（Hashrise 的技术栈），Unity/Unreal/Web 条目相对少。
 - 目录日期较旧或用户需要最新信息时，在有网络和工具的情况下核对上游仓库；无法核对时说明。

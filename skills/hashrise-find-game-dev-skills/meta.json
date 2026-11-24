@@ -1,0 +1,10 @@
+{
+  "title": "独立游戏开发 Skill 导航",
+  "summary": "为独立游戏开发者查找、比较和安装开源 AI Skills：GDD 起草、玩法与数值设计、Godot/Unity/Unreal 实现、美术音频、Steam 商店页与发行、CI 构建与测试。收录 180+ 个已核实的第三方技能与 9 个第一方技能。",
+  "category": "导航与工具",
+  "platforms": ["通用"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "导航", "索引", "技能发现", "开源"],
+  "evidence": "本仓库自研。目录由 scripts/curate.py 从 22 个上游仓库的本地浅克隆中抽取 frontmatter 后人工策展生成，每条记录锁定来源 commit 与内容 sha256；构建与校验脚本在每次发布时自动运行。",
+  "limitations": "目录是精选快照，未覆盖全网；第三方条目均为 source-checked（仅核实文件与 commit），未做业务效果实测。检索为关键词与别名匹配，不是语义搜索。"
+}

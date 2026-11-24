@@ -132,17 +132,18 @@ function card(s) {
 
   const top = el('div', 'card-top');
   top.appendChild(el('h3', 'card-title', esc(s.title)));
+  top.appendChild(el('span', s.origin === 'first-party' ? 'badge badge-first' : 'badge badge-src',
+    s.origin === 'first-party' ? '已验证' : '仅核实来源'));
   n.appendChild(top);
 
-  n.appendChild(el('p', 'card-repo', `${s.repo} · ${s.name}`));
+  n.appendChild(el('p', 'card-repo', esc(s.repo)));
   n.appendChild(el('p', 'card-sum', esc(s.summary)));
 
   const foot = el('div', 'card-foot');
+  foot.appendChild(el('span', 'tag mono', esc(s.name)));
   foot.appendChild(el('span', 'tag cat', esc(s.category)));
   for (const p of s.platforms) foot.appendChild(el('span', 'tag eng', esc(p)));
   foot.appendChild(el('span', 'tag cap', esc(s.capability)));
-  foot.appendChild(el('span', s.origin === 'first-party' ? 'badge badge-first' : 'badge badge-src',
-    s.origin === 'first-party' ? '已验证' : '仅核实来源'));
   const lb = licenseBadge(s);
   if (lb) foot.insertAdjacentHTML('beforeend', lb);
   n.appendChild(foot);

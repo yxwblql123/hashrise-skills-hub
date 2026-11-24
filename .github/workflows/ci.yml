@@ -1,0 +1,55 @@
+name: Hashrise Skills Hub CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: hashrise-skills-hub-ci
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate catalog & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate catalog integrity
+        run: node scripts/validate.mjs
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build site & skill packages
+        run: node scripts/build.mjs
+
+      - name: Check catalog has no CRLF
+        run: |
+          if grep -q $'\r' data/catalog.json; then
+            echo "::error::catalog.json contains CRLF — run: git config core.autocrlf false && git checkout HEAD -- data/catalog.json"
+            exit 1
+          fi
+          echo "catalog.json line endings OK"
+
+      - name: Upload skill package
+        uses: actions/upload-artifact@v4
+        with:
+          name: hashrise-find-game-dev-skills
+          path: dist/downloads/hashrise-find-game-dev-skills.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload site preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: dist/preview.html
+          if-no-files-found: error
+          retention-days: 30

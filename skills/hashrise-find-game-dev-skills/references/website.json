@@ -4,16 +4,18 @@
  "repo": "hashrise-studio/hashrise-skills-hub",
  "homepage": "https://github.com/hashrise-studio/hashrise-skills-hub",
  "stats": {
-  "total": 189,
-  "first_party": 8,
+  "total": 190,
+  "first_party": 9,
   "third_party": 181,
-  "repos": 24,
-  "categories": 7,
+  "repos": 23,
+  "repos_including_first_party": 24,
+  "categories": 8,
   "engines": 7
  },
  "facets": {
   "category": {
    "商业化与发行": 41,
+   "导航与工具": 1,
    "工程与交付": 22,
    "引擎与实现": 47,
    "概念与策划": 45,
@@ -23,15 +25,15 @@
   },
   "platform": {
    "Steam": 41,
+   "通用": 82,
    "Godot": 61,
-   "通用": 81,
    "Unity": 3,
    "Unreal": 3,
    "Blender": 4,
    "Web": 1
   },
   "capability": {
-   "方法指导": 131,
+   "方法指导": 132,
    "自动化": 18,
    "代码生成": 26,
    "平台接入": 14

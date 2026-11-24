@@ -10,7 +10,7 @@
 
 一套**可对外分享**的独立游戏开发 Skill 索引，包含：
 
-- **189 条目录**：8 个第一方技能（已验证）+ 181 个第三方开源技能（核实来源）
+- **190 条目录**：9 个第一方技能（已验证）+ 181 个第三方开源技能（核实来源）
 - **22 个上游仓库**，覆盖 Godot / Unity / Unreal / Web / Blender / Steam
 - **可视化导航页**：按开发阶段、引擎维度、能力形态、来源筛选
 - **目录完整性校验**：每条记录锁定来源 commit 与内容 sha256
@@ -50,7 +50,7 @@ hashrise-skills-hub/
 │   ├── search.mjs                检索核心（站点与技能共用）
 │   └── style.css                 样式（设计 token 取自 Hashrise 美术圣经）
 ├── skills/
-│   ├── hashrise-find-game-dev-skills/    导航技能（可安装）
+│   ├── hashrise-find-game-dev-skills/    导航技能（可安装，旗舰条目）
 │   ├── hashrise-gdd-author/              第一方：八节格式 GDD
 │   ├── hashrise-design-pillars/          第一方：设计支柱与漂移检查
 │   ├── hashrise-godot-architecture/      第一方：Godot 三层架构
@@ -154,7 +154,7 @@ npm run validate  # 目录字段、commit、哈希、许可证、安装命令校
 
 ## 关于第一方技能
 
-8 个第一方技能提炼自《算力崛起 Hashrise》的真实文档与代码：
+9 个第一方技能——8 个提炼自《算力崛起 Hashrise》的真实文档与代码，1 个是本导航站自身：
 
 | 技能 | 来源 |
 |------|------|
@@ -166,6 +166,7 @@ npm run validate  # 目录字段、commit、哈希、许可证、安装命令校
 | `hashrise-godot-test-probe` | `tests/logic_check_g5.gd`、`tests/ui_drive_check.gd` |
 | `hashrise-monetization-guard` | `design/gdd/systems/monetization.md` |
 | `hashrise-steam-store-page` | `design/gdd/gdd-main.md §3.1` 合规红线 + `design/art/asset-spec.md` |
+| `hashrise-find-game-dev-skills` | 本仓库自研：策展脚本 + 目录校验 + 构建流水线 |
 
 **方法可迁移，具体数值与配置需按项目调整。**
 

@@ -304,13 +304,18 @@ h1 {
   line-height: 1.4;
   color: var(--paper);
   flex: 1;
+  min-width: 0;
 }
+
+.card-top .badge { flex: none; margin-top: 1px; }
 
 .card-repo {
   font-family: var(--mono);
   font-size: 11.5px;
   color: var(--paper-mute);
-  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-sum {
@@ -335,6 +340,16 @@ h1 {
 .tag.cat { background: rgba(58, 110, 165, .2); color: #A8C6E5; }
 .tag.eng { background: rgba(242, 153, 74, .14); color: var(--amber-lt); }
 .tag.cap { background: rgba(255, 255, 255, .05); color: var(--paper-mute); }
+.tag.mono {
+  background: transparent;
+  border: 1px solid var(--slate-3);
+  color: var(--paper-mute);
+  font-family: var(--mono);
+  font-size: 11px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .badge {
   font-size: 11px;
