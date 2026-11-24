@@ -183,6 +183,7 @@ function buildWelcome(catalog) {
       '第一方技能来自《算力崛起 Hashrise》的真实工程实践，已在项目内验证。'
     ].join('\n'),
     url: `file://${htmlPath.replace(/\\/g, '/')}`,
+    online_url: 'https://yxwblql123.github.io/hashrise-skills-hub/',
     path: htmlPath
   };
 }
