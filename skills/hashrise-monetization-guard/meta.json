@@ -1,0 +1,10 @@
+{
+  "title": "变现设计与 P2W 红线守卫",
+  "summary": "用 Hashrise 的 no-P2W 三条硬红线审查变现：付费只加速不锁内容、不提升数值上限、变现不靠打断；含广告疲劳护栏配置、软内购档位肝度标注法与可执行审查清单。",
+  "category": "概念与策划",
+  "platforms": ["通用"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "变现", "内购", "广告", "P2W", "公平性"],
+  "evidence": "提炼自 Hashrise 的 design/gdd/systems/monetization.md（三条变现支柱、广告频次上限、软内购档位与肝度、no-P2W 保证、验收清单）与 ADR-003（变现藏在接口后）。",
+  "limitations": "具体定价档位与频次上限来自 Hashrise 的休闲放置定位，付费意愿更高的品类需要重新校准；地区定价与年龄分级属运营与法务范畴，本技能只给设计侧红线。"
+}

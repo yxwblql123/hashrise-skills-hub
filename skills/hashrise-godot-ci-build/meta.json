@@ -1,0 +1,10 @@
+{
+  "title": "Godot CI 与每日构建流水线",
+  "summary": "搭建可靠的 Godot 4.x CI：secrets 上下文规避、headless 导出非零退出码的正确判定、Godot 缓存与执行权限、artifact 带日志、签名密钥探测与 tag 发版。",
+  "category": "工程与交付",
+  "platforms": ["Godot", "通用"],
+  "capability": "自动化",
+  "tags": ["Hashrise", "Godot", "CI", "GitHub Actions", "构建", "发版"],
+  "evidence": "提炼自 Hashrise 项目的 .github/workflows/daily-build.yml（22KB 实际运行的工作流），含 secrets 上下文探测 job、无头导出判定、Godot 缓存与 Android keystore 注入。",
+  "limitations": "以 GitHub Actions + Ubuntu runner 为例。GitLab CI / Jenkins 需要改写 job 结构与 secrets 读取方式；Android 构建部分依赖具体项目的 keystore 与 Gradle 配置，首次必须本地验证。"
+}

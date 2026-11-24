@@ -1,0 +1,10 @@
+{
+  "title": "离线收益对账",
+  "summary": "实现放置游戏的离线结算：unix 时间差作权威墙钟、24 小时硬上限防改时钟、种子化 RNG 持久化保证可复现、离线行情冻结、事件损失封顶 40%、切后台即存档。",
+  "category": "引擎与实现",
+  "platforms": ["Godot"],
+  "capability": "代码生成",
+  "tags": ["Hashrise", "Godot", "离线收益", "存档", "放置游戏", "反作弊"],
+  "evidence": "提炼自 Hashrise 的 docs/architecture/adr/adr-002-offline-reconciliation.md（决策、备选方案与否决理由、结算公式与红线）与 design/gdd/systems/economy.md §4.3/§5、core-loop.md §4.2。",
+  "limitations": "服务端校时作为防作弊的终极方案在 Hashrise 中被推迟到 post-MVP；本技能实现的是纯客户端方案，联网游戏需另行设计服务端权威结算。"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "设计支柱与漂移检查",
+  "summary": "用「设计支柱 + 可判定反例 + 可观察落地」三件套定义游戏主张，并给新机制的四步漂移检查流程：声明支柱、查反例、给落地证据、写进文档。",
+  "category": "概念与策划",
+  "platforms": ["通用"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "设计支柱", "反例", "漂移检查", "评审", "定位"],
+  "evidence": "提炼自 Hashrise 的 design/gdd/gdd-main.md §1（三条设计支柱与反例红线）、§2（目标玩家与 Bartle 心理映射）、design/art/art-bible.md §2（支柱到视觉的映射）与 systems-index.md 的一致性红线检查点。",
+  "limitations": "支柱的具体内容属于 Hashrise 这个游戏，方法本身可迁移；反例清单需按自身项目重新定义，目标玩家画像也应定期用真实数据复核。"
+}

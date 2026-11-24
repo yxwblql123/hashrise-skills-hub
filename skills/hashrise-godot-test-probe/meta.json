@@ -1,0 +1,10 @@
+{
+  "title": "Godot 无头探针式验证",
+  "summary": "用 extends SceneTree 的无头探针脚本做逻辑自检、UI 面板驱动测试与存档往返验证，结果直写文件供 CI 抓取，规避 headless 下 stdout 尾部被吞的坑。",
+  "category": "工程与交付",
+  "platforms": ["Godot"],
+  "capability": "自动化",
+  "tags": ["Hashrise", "Godot", "测试", "无头", "CI", "headless"],
+  "evidence": "提炼自 Hashrise 项目的 tests/logic_check_g5.gd、tests/ui_drive_check.gd、tests/perf_bench.gd 与 tests/TEST_PLAN.md 的实际探针实现。",
+  "limitations": "探针适合系统级与场景级验证，不替代 GUT/gdUnit4 的单元测试；部分探针会直接写存档文件，需自行隔离测试存档路径，避免污染正式数据。"
+}

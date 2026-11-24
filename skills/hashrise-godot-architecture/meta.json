@@ -1,0 +1,10 @@
+{
+  "title": "Godot 三层架构落地",
+  "summary": "落地 Hashrise 的 Godot 4.x 三层架构：UI/模拟/数据状态分层、EventBus 解耦、数值 Resource 资源化、模拟与表现分离、变现接口抽象。",
+  "category": "引擎与实现",
+  "platforms": ["Godot"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "Godot", "架构", "EventBus", "Resource", "解耦"],
+  "evidence": "提炼自 Hashrise 项目的 docs/architecture/main-architecture.md、docs/architecture/adr/adr-001-data-as-resources.md、adr-003-ad-iap-abstraction.md 与 project.godot 实际配置。",
+  "limitations": "Hashrise 目标为 Godot 4.2.2 + GL Compatibility 的 2D 移动端项目。GL 渲染器选择、540×960 视口等具体配置需按目标平台调整；分层原则本身可迁移到其他引擎。"
+}

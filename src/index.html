@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hashrise 游戏开发 Skill 导航 · 独立游戏开发 AI 技能索引</title>
+<meta name="description" content="面向独立游戏开发的 AI Skill 导航：GDD 起草、Godot 场景与架构、Steam 商店页、CI 构建。收录 180+ 个已核实的开源游戏开发技能，含第一方工程实践。">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="4" y="26" width="9" height="18" rx="2" fill="#3A6EA5"/>
+        <rect x="16" y="18" width="9" height="26" rx="2" fill="#5B8FC4"/>
+        <rect x="28" y="10" width="9" height="34" rx="2" fill="#F2994A"/>
+        <circle cx="32.5" cy="6" r="4" fill="#F2994A" opacity=".35"/>
+      </svg>
+      <div>
+        <p class="brand-eyebrow">Hashrise Studio</p>
+        <h1>游戏开发 Skill 导航</h1>
+      </div>
+    </div>
+
+    <p class="hero-lede">
+      独立游戏开发的 AI 技能索引 —— 从 <b>GDD 起草</b>、<b>Godot 场景与架构</b>、<b>Steam 商店页</b> 到 <b>CI 构建</b>。
+      第一方技能来自《算力崛起 Hashrise》的真实工程实践；第三方技能逐条核实文件与 commit。
+    </p>
+
+    <div class="hero-stats" id="heroStats"></div>
+
+    <div class="search-row">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 1-4.9 13.2l-3.2 3.2-1.4-1.4 3.2-3.2A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+        <input id="q" type="search" placeholder="搜索技能：gdd、godot 场景、steam 商店页、CI 构建、数值平衡…" autocomplete="off" spellcheck="false">
+        <button id="clearQ" class="clear-btn" type="button" hidden aria-label="清空">×</button>
+      </div>
+      <button id="resetBtn" class="ghost-btn" type="button">重置筛选</button>
+    </div>
+
+    <div class="engine-chips" id="engineChips"></div>
+  </div>
+</header>
+
+<nav class="filters" id="filters">
+  <div class="filters-inner">
+    <div class="filter-group">
+      <span class="filter-label">开发阶段</span>
+      <div class="chipset" id="catChips"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">能力形态</span>
+      <div class="chipset" id="capChips"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">来源</span>
+      <div class="chipset" id="originChips"></div>
+    </div>
+    <div class="filter-group filter-right">
+      <span class="filter-label">排序</span>
+      <select id="sortSel" class="sort-sel">
+        <option value="recommended">推荐优先</option>
+        <option value="first-party">第一方优先</option>
+        <option value="updated">最近核对</option>
+        <option value="name">名称</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="result-head">
+    <p id="resultCount" class="result-count"></p>
+    <p id="activeFilter" class="active-filter"></p>
+  </div>
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" hidden>
+    <p class="empty-title">没有匹配的技能</p>
+    <p class="empty-hint">换个关键词，或把筛选条件放宽一点试试。</p>
+    <button class="ghost-btn" type="button" onclick="document.getElementById('resetBtn').click()">重置全部筛选</button>
+  </div>
+</main>
+
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-copy">
+      <p class="cta-eyebrow">这套骨架是开源的</p>
+      <h2>把你的开发流程也做成 Skill 导航</h2>
+      <p>
+        本站不是静态页面。它是一套 <b>技能索引 + 可视化导航 + 目录 JSON + 完整性校验</b> 的完整骨架：
+        目录条目带 commit 与内容 sha256，构建时校验，构建脚本生成自包含单文件页面，
+        还能打包成可导入的技能包。
+      </p>
+      <ul class="cta-points">
+        <li><b>策展可重跑</b> —— <code>scripts/curate.py</code> 从本地克隆的候选仓库生成目录</li>
+        <li><b>哈希防篡改</b> —— 每条记录锁定文件 sha256 与来源 commit</li>
+        <li><b>离线可用</b> —— 构建产物是单文件 HTML，断网也能翻</li>
+        <li><b>可导成技能</b> —— 一键打包 ZIP，导入任意支持 SKILL.md 的客户端</li>
+      </ul>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://github.com/hashrise-studio/hashrise-skills-hub" target="_blank" rel="noopener noreferrer">查看仓库 ↗</a>
+        <a class="btn btn-ghost" href="#grid">回到技能列表</a>
+      </div>
+    </div>
+    <div class="cta-card">
+      <p class="cta-card-title">《算力崛起 Hashrise》</p>
+      <p class="cta-card-sub">2D 放置经营 · 加密矿场模拟（虚构币种）</p>
+      <ul class="cta-card-list">
+        <li>引擎 <b>Godot 4.2.2</b> · GDScript · GL Compatibility</li>
+        <li>后端 <b>FastAPI on Render</b> · 云存档 + JWT 认证</li>
+        <li>CI <b>GitHub Actions</b> · 每日构建 · Android AAB + universal APK</li>
+        <li>发行 <b>Google Play</b> · Steam 商店页筹备中</li>
+      </ul>
+      <p class="cta-card-note">
+        第一方技能全部来自这个项目的真实文档与代码：
+        八节格式 GDD、三层架构、ADR 决策、无头探针、CI 判定、变现红线。
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>
+      <b>说明</b>：本站是<strong>精选目录</strong>，未覆盖全网。
+      第一方技能标记为 <span class="badge badge-first">已验证</span>，
+      第三方技能标记为 <span class="badge badge-src">仅核实来源</span> ——
+      文件与 commit 已核实，<strong>不等于业务实测</strong>。
+    </p>
+    <p class="footer-meta" id="footerMeta"></p>
+  </div>
+</footer>
+
+<div id="detail" class="detail" hidden>
+  <div class="detail-backdrop" data-close></div>
+  <aside class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <button class="detail-close" type="button" data-close aria-label="关闭">×</button>
+    <div id="detailBody"></div>
+  </aside>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>

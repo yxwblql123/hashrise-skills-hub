@@ -1,0 +1,10 @@
+{
+  "title": "Steam 商店页撰写与审查",
+  "summary": "撰写与审查 Steam 商店页：短描述钩子写法、About This Game 四块结构、标签优先级、胶囊图与截图规格、预告片剪辑点、合规披露与多语言本地化、上架后持续优化。",
+  "category": "商业化与发行",
+  "platforms": ["Steam"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "Steam", "商店页", "ASO", "标签", "本地化", "合规"],
+  "evidence": "结合 Hashrise 的虚构币种合规红线（design/gdd/gdd-main.md §3.1、design/gdd/systems/monetization.md）与素材规格约定（design/art/asset-spec.md），并参考 Steamworks 官方商店页与素材规格要求。",
+  "limitations": "Hashrise 当前主要在 Google Play 分发，Steam 商店页尚未实盘上线，本技能为上架前的准备与审查标准，未经真实转化数据验证；素材规格以 Steam 官方文档为准，可能随 Valve 调整更新。"
+}

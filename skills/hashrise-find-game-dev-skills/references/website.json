@@ -1,0 +1,41 @@
+{
+ "name": "Hashrise 游戏开发 Skill 导航",
+ "title": "独立游戏开发 AI 技能索引",
+ "repo": "hashrise-studio/hashrise-skills-hub",
+ "homepage": "https://github.com/hashrise-studio/hashrise-skills-hub",
+ "stats": {
+  "total": 189,
+  "first_party": 8,
+  "third_party": 181,
+  "repos": 24,
+  "categories": 7,
+  "engines": 7
+ },
+ "facets": {
+  "category": {
+   "商业化与发行": 41,
+   "工程与交付": 22,
+   "引擎与实现": 47,
+   "概念与策划": 45,
+   "美术与音频": 16,
+   "平台与后端": 6,
+   "质量与运营": 12
+  },
+  "platform": {
+   "Steam": 41,
+   "Godot": 61,
+   "通用": 81,
+   "Unity": 3,
+   "Unreal": 3,
+   "Blender": 4,
+   "Web": 1
+  },
+  "capability": {
+   "方法指导": 131,
+   "自动化": 18,
+   "代码生成": 26,
+   "平台接入": 14
+  }
+ },
+ "coverage": "精选目录：收录 Hashrise 第一方技能与已核实的第三方开源游戏开发 Skill；未覆盖全网，来源核对不等于业务实测。"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "八节格式 GDD 起草与评审",
+  "summary": "用《算力崛起 Hashrise》的八节格式起草与评审设计文档：数值总表单一权威源、一致性红线逐条核对、验收写成可勾选清单。",
+  "category": "概念与策划",
+  "platforms": ["通用"],
+  "capability": "方法指导",
+  "tags": ["Hashrise", "GDD", "设计文档", "数值总表", "评审"],
+  "evidence": "提炼自 Hashrise 项目的 design/gdd/gdd-main.md、design/gdd/systems-index.md、design/gdd/systems/ 六个子系统文档与 Phase 2 设计评审记录。",
+  "limitations": "方法来自放置/模拟经营类经济驱动游戏，文档模板可迁移，但「六条一致性红线」的具体判定阈值需按自身项目调整。"
+}

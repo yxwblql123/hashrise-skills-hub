@@ -1,0 +1,11 @@
+{
+ "version": "0.1.0",
+ "released_at": "2026-11-24",
+ "catalog": {
+  "updated_at": "2026-11-24",
+  "skills": 189,
+  "sha256": "0e3928cc6449567e01ac3c8a30c3a9b37ec919cb1a721ddc83ac8e5cf6dfea70"
+ },
+ "download": "hashrise-skills-hub/releases",
+ "notes": "首个版本：收录 8 个第一方技能与 181 个已核实的第三方游戏开发 Skill。"
+}
