@@ -2,11 +2,11 @@
 
 > 面向独立游戏开发的 AI Skill 导航 —— GDD 起草 / Godot 场景与架构 / Steam 商店页 / CI 构建。
 
-[![CI](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml) [![Pages](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/deploy-pages.yml/badge.svg)](https://yxwblql123.github.io/hashrise-skills-hub/) [![Skills](https://img.shields.io/badge/Skills-190-blueviolet?style=flat-square)](https://yxwblql123.github.io/hashrise-skills-hub/) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) [![Node](https://img.shields.io/badge/Node-%3E%3D22-brightgreen?style=flat-square)](package.json)
+[![CI](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/ci.yml) [![Pages](https://github.com/yxwblql123/hashrise-skills-hub/actions/workflows/deploy-pages.yml/badge.svg)](https://hashrise.devs.li/) [![Skills](https://img.shields.io/badge/Skills-190-blueviolet?style=flat-square)](https://hashrise.devs.li/) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) [![Node](https://img.shields.io/badge/Node-%3E%3D22-brightgreen?style=flat-square)](package.json)
 
-🌐 **在线导航**：https://yxwblql123.github.io/hashrise-skills-hub/
+🌐 **在线导航**：https://hashrise.devs.li/
 📦 **仓库**：https://github.com/yxwblql123/hashrise-skills-hub
-📥 **便携单文件页**（断网可用）：[下载 preview.html](https://yxwblql123.github.io/hashrise-skills-hub/preview.html)
+📥 **便携单文件页**（断网可用）：[下载 preview.html](https://hashrise.devs.li/preview.html)
 
 **第一方技能来自《算力崛起 Hashrise》的真实工程实践（已验证），第三方技能逐条核实文件、commit 与内容哈希。**
 
@@ -137,8 +137,8 @@ git checkout HEAD -- data/catalog.json skills/
 
 | 需求 | 做法 |
 |------|------|
-| 只是查技能、看导航 | **不用装**，直接开 [在线站](https://yxwblql123.github.io/hashrise-skills-hub/) |
-| 想离线带着走 | 下载 [preview.html](https://yxwblql123.github.io/hashrise-skills-hub/preview.html)，双击即开，目录全内联 |
+| 只是查技能、看导航 | **不用装**，直接开 [在线站](https://hashrise.devs.li/) |
+| 想离线带着走 | 下载 [preview.html](https://hashrise.devs.li/preview.html)，双击即开，目录全内联 |
 | 想在 AI 客户端里对话式检索 | 安装下面的 `hashrise-find-game-dev-skills` 技能包 |
 | 想用某个第三方技能本体 | 在导航页筛出条目 → 看详情里的「安装命令」，装到对应客户端 |
 
